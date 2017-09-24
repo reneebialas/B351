@@ -43,9 +43,7 @@ AI_CITY_ADJ_LIST = [[AI_nodeA, AI_nodeB, 5],
 # Heuristic function -- takes two nodes, returns a number: the Euclidean distance 
 # between aNode and bNode
 def euclideanDistance(aNode, bNode):
-    #TODO
-    return 0
-
+    return sqrt(((aNode.x-bNode.x)**2) + ((aNode.y-bNode.y)**2))
 # find_node_to_explore -- takes a list of nodes, returns a node:
 # the lowest-cost node in the frontier
 def find_node_to_explore(frontier):
@@ -57,7 +55,7 @@ def find_node_to_explore(frontier):
 def expand_frontier(to_explore, frontier, adjacencyMatrix, goal_state):
     #TODO
     return frontier
-            
+'''           
 # aStar -- full A* function: takes a list of nodes, an adjacency matrix, a start node, and a goal node
 # feel free to turn debugging (printing) on/off as you wish
 def aStar(nodeList, adjacencyMatrix, startNode, goalNode, debug=True):
@@ -92,15 +90,21 @@ def aStar(nodeList, adjacencyMatrix, startNode, goalNode, debug=True):
             print node.str()
         print "We found the goal!"
     else: print "Goal not found :("
-
+'''
 # Main method. Add more tests!
 def main():
+    '''
     #Test for AI City Graph, starting at A with goal node F
     result = aStar(AI_CITY_NODE_LIST, AI_CITY_ADJ_LIST, AI_nodeA, AI_nodeF)
     for i in result[0]:
         print(i.name)
         print ("Total Path Cost: %d" % result[1])
     #add your own tests below!
+    '''
+    aNode = Node("A", 5, 6)
+    bNode = Node("B", 2, 2)
+    print(euclideanDistance(aNode,bNode))
+
 
 if __name__ == "__main__": main()
 
